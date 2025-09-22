@@ -10,7 +10,7 @@ def _(mo):
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _():
     import base64
     from pathlib import Path
