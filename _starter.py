@@ -10,14 +10,24 @@ def _(mo):
     return
 
 
+@app.cell
+def _():
+    import base64
+    from pathlib import Path
+    gif = Path("./public/enable-ollama.gif").read_bytes()
+    gif_base64 = base64.b64encode(gif).decode("utf-8")
+    gif_url = f"data:image/gif;base64,{gif_base64}"
+    return (gif_url,)
+
+
 @app.cell(hide_code=True)
-def _(mo):
+def _(mo, gif_url):
     mo.md(
-        r"""
+        rf"""
     # Step 1.
     Enable the Ollama extension inside Enverge Lab. Here's how: 
 
-    ![Enable Extension](./public/enable-ollama.gif)
+    ![Enable Extension]({gif_url})
     """
     )
     return
