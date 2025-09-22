@@ -5,8 +5,21 @@ app = marimo.App()
 
 
 @app.cell
-def _():
-    # Welcome to the Enverge
+def _(mo):
+    mo.md(r"""# Welcome to the Enverge""")
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        r"""
+    # Step 1.
+    Enable the Ollama extension inside Enverge Lab. Here's how: 
+
+    ![Enable Extension](./public/enable-ollama.gif)
+    """
+    )
     return
 
 
@@ -17,7 +30,7 @@ def _():
 
 
 @app.cell
-def _(model_name, mo):
+def _(mo, model_name):
     # Taken from: https://github.com/ollama/ollama-python/blob/main/examples/pull.py
     from ollama import pull
 
@@ -49,8 +62,9 @@ def _(model_name, mo):
             pass
     return
 
+
 @app.cell
-def _(MODEL_NAME):
+def _(model_name):
     from ollama import chat
 
     messages = [
@@ -60,9 +74,15 @@ def _(MODEL_NAME):
       },
     ]
 
-    response = chat(MODEL_NAME, messages=messages)
+    response = chat(model_name, messages=messages)
     print(response['message']['content'])
     return
+
+
+@app.cell
+def _():
+    import marimo as mo
+    return (mo,)
 
 
 if __name__ == "__main__":
