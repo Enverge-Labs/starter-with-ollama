@@ -1,6 +1,6 @@
 # Showcase of Enverge Lab + Ollama Integration
 
-[![Launch in Enverge.ai](https://devlab.enverge.ai/assets/enverge-shield.svg)](http://lab.enverge.ai/open?repo=git@github.com:Enverge-Labs/fine-tuning-embeddings.git&notebook=1-generate_synthetic_queries.py)
+[![Launch in Enverge.ai](https://devlab.enverge.ai/assets/enverge-shield.svg)](http://lab.enverge.ai/open?repo=git@github.com:Enverge-Labs/starter-with-ollama.git&notebook=_starter_.py)
 
 Super short example of using Enverge Lab + Ollama integration.
 

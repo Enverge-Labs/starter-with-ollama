@@ -23,7 +23,7 @@ def _(model_name, mo):
 
     bars, completed_amounts = {}, {}
 
-    for progress in pull(MODEL_NAME, stream=True):
+    for progress in pull(model_name, stream=True):
       digest = progress.get('digest', '')
 
       if not digest:
